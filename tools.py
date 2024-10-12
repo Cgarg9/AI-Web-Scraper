@@ -1,19 +1,3 @@
-import selenium.webdriver as webdriver
-from selenium.webdriver.chrome.service import Service
+from crewai_tools import YoutubeChannelSearchTool
 
-
-def scrape_website(website):
-    print("Launching web browser...")
-
-    chrome_driver_path = ""
-    options = webdriver.ChromeOptions()
-    driver = webdriver.Chrome(service=Service(chrome_driver_path), options=options)
-
-    try:
-        driver.get(website)
-        print("Page Loaded")
-        html = drive.page_source
-
-        return html
-    finally:
-        driver.quit()
+yt_tool = YoutubeChannelSearchTool(youtube_channel_handle='@krishnaik06')
